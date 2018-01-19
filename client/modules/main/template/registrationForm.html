@@ -1,0 +1,34 @@
+
+
+ <!DOCTYPE html>
+<html>
+<body>
+
+<h3> REGISTRATION FORM</h3>
+
+<div>
+   
+    <label for="uname">USERNAME</label>
+    <input ng-model="user.name" type="text"  placeholder="USER NAME..">
+
+    <label for="pass">PASSWORD</label>
+    <input ng-model="user.password" type="PASSWORD"   placeholder="PASSWORD.">
+
+<label for="cpass">CONFORM PASSWORD</label> 
+    <input ng-model="user.conformPassword" type="PASSWORD"   placeholder="CONFORM PASSWORD.">
+<br>
+<label for="aadhar">AADHAR NUMBER</label>
+    <input type="number" ng-model="user.aadharNumber" placeholder="AADHAR NUMBER.">
+
+<label for="email">EMAIL</label>
+    <input type="text" ng-model="user.email" placeholder="EMAIL.">
+
+<label for="mobile">MOBILE NUMBER</label>
+    <input type="NUMBER" ng-model="user.mobileNumber" placeholder="MOBILE.">
+
+  
+    <input type="submit" ng-click="createUser()" value="Submit"><br>{{error}}{{text}}
+  </div>
+
+</body>
+</html>

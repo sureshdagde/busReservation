@@ -1,0 +1,56 @@
+
+
+
+ <!DOCTYPE html>
+<html>
+<body>
+
+<h3> BUS RECORD</h3>
+
+<div>
+   
+    <label for="_id">id</label>
+    <input ng-model="bus._id" type="text"  placeholder="ID..">
+
+    <label for="bname">bus name</label>
+    <input ng-model="bus.name" type="text"  placeholder="BUS NAME..">
+
+    <label for="source"> source</label>
+    <input ng-model="bus.source" type="text"  placeholder="source..">
+
+    <label for="destination">destination</label>
+    <input ng-model="bus.destination" type="text"  placeholder="destination..">
+
+    <label for="discription">discription</label>
+    <input ng-model="bus.discription" type="text"   placeholder="discription.">
+
+<label for="bordingTime">bordingTime </label> 
+    <input ng-model="bus.bordingTime"  type="datetime-local" placeholder="bordingTime .">
+<br>
+<label for="droppingTime"> droppingTime</label>
+    <input type="datetime-local" ng-model="bus.droppingTime" placeholder="droppingTime.">
+<br>
+<label for="seats">seats</label>
+    <input type="NUMBER" ng-model="bus.seats" placeholder="seats.">
+
+<label for="window">window</label>
+    <input type="NUMBER" ng-model="bus.window" placeholder="window.">
+
+  <label for="inr">inr</label>
+    <input type="NUMBER" ng-model="bus.inr" placeholder="inr.">
+
+<label for="email">email</label>
+    <input type="text" ng-model="bus.contact" placeholder="email.">
+   
+<label for="mobileNumber">mobileNumber</label>
+    <input type="NUMBER" ng-model="bus.mobileNumber" placeholder="mobileNumber.">
+   {{error}}
+
+    <input type="submit" ng-click="createBus()" value="newBus">
+    <input type="submit" ng-click="update()" value="update">
+    <input type="submit" ng-click="delete1()" value="delete"><br>
+  </div>
+
+</body>
+</html>
+  

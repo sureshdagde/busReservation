@@ -1,0 +1,47 @@
+
+<html>
+    <head> 
+    	<title>select BUs</title>
+    </head>
+    <body>
+    	
+       <div><span class="col-md-12" >{{allbusInfo[0].source}}--------->{{allbusInfo[0].destination}}</span><hr></div>
+      <ul ng-repeat = "bus in allbusInfo" >
+       <div >
+          	<span class="col-md-1" >
+          		<img src="2322.png" heigth ='35' width='35' ><br>{{bus.busName}}
+          	</span>
+          	<span class="col-md-2">
+          		 
+               Type:{{bus.discription}}
+          		 
+          	</span>
+          	<span  class="col-md-1">
+          		Seats: {{bus.seats}}
+          		 
+          	</span>
+          	<span class="col-md-1">
+          	windows:{{bus.window}}
+          	
+          	</span>
+          	<span class="col-md-1">
+          	inr:{{bus.inr}}	
+
+          	</span>
+          	<span class="col-md-3">
+          		Mobile :{{bus.mobileNumber}}
+          	</span>	
+
+            <span class="col-md-3">reserv your seats
+            <input type="submit21" ng-click ="seats()" value="view seats">
+            </span> 
+            
+          	<hr><hr>
+          	
+          	
+         
+          	
+       </div>
+       
+       </ul>
+</body></html>

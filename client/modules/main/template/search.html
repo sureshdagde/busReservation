@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h3>Type Your Route</h3>
+
+<div>
+
+    <label for="source">From</label>
+    <input type="text" ng-model="bus.source" placeholder="Source">
+<br>
+    <label for="des">To </label>
+    <input type="text"  ng-model="bus.destination" placeholder="Destination">
+<br>
+    <label for="start-time">ONWARD DATE:</label>
+        <input type="datetime-local" ng-model="bus.stime" >
+<br>
+    <label for="end-time">RETURN DATE:</label>
+        <input type="datetime-local" ng-model="bus.etime"><br>
+  
+    <input type="submit" value="Search" ng-click="searchBus()">
+  {{data}}{{data1}}
+</div>
+
+</body>
+</html>
