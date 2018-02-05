@@ -1,7 +1,5 @@
 
 
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,19 +9,95 @@
 <body>
 	
 
-<div  >
+<div>
 <center>  
   <h3>LOGIN</h3></center>
-  <label for="uname">USERNAME <br>  {{error}}</label>
+  <label for="uname">USERNAME </label><br>  <h6 style="color:red">{{error}}</h6>
     <input ng-model="user.name" type="text"  placeholder="USER NAME..">
 <br>
     <label for="pass">PASSWORD</label>
     <input ng-model="user.password" type="PASSWORD" placeholder="PASSWORD.">
 <br>
    
-   <input type="submit" class="btn btn-primary" value="submit" ng-click="search()">
-    <input type="submit" class="btn btn-primary" value="newUser" ng-click="gotosignup()">
+   <input  ng-disabled = "!user.name || !user.password"type="submit"  class="btn btn-primary" value="Submit" ng-click="search()">
+    <input type="submit" class="btn btn-primary" value="New User" ng-click="gotosignup()">
 {{record}}
 </div>
+
+ 
+<div class= "text-center">
+ 
+
+ 
+<a href="#Boot" role="button" class="btn btn-large btn-primary" data-toggle="modal">Open</a>
+ 
+</div>
+ 
+ 
+ 
+ 
+<!-- Modal HTML -->
+ 
+ 
+<div id="Boot" class="modal fade">
+ 
+ 
+<div class="modal-dialog">
+ 
+ 
+<div class="modal-content">
+ 
+ 
+<div class="modal-header">
+ 
+<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+ 
+ 
+<h4 class="modal-title">This is a sample Modal</h4>
+ 
+ 
+</div>
+ 
+ 
+ 
+<div class="modal-body">
+ 
+ 
+ 
+Do you understand how this Modal works? If not see, the code.
+ 
+ 
+ 
+ 
+<small>Keep practicing, you will learn how to create this</small>
+  <label for="uname">USERNAME </label><br>  <h6 style="color:red">{{error}}</h6>
+    <input ng-model="user.name" type="text"  placeholder="USER NAME..">
+<br>
+    <label for="pass">PASSWORD</label>
+    <input ng-model="user.password" type="PASSWORD" placeholder="PASSWORD.">
+<br>
+ 
+</div>
+ 
+ 
+ 
+<div class="modal-footer">
+ 
+<button type="button" class="btn btn-success" data-dismiss="modal">Okay, I Understand</button>
+ 
+<button type="button" class="btn btn-warning">Take me to code</button>
+ 
+</div>
+ 
+ 
+</div>
+ 
+ 
+</div>
+ 
+ 
+</div>
+ 
+
 </body>
 </html> 

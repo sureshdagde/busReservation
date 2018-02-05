@@ -1,47 +1,588 @@
 
+  
 <html>
     <head> 
     	<title>select BUs</title>
     </head>
     <body>
-    	
-       <div><span class="col-md-12" >{{allbusInfo[0].source}}--------->{{allbusInfo[0].destination}}</span><hr></div>
-      <ul ng-repeat = "bus in allbusInfo" >
-       <div >
-          	<span class="col-md-1" >
-          		<img src="2322.png" heigth ='35' width='35' ><br>{{bus.busName}}
-          	</span>
-          	<span class="col-md-2">
-          		 
-               Type:{{bus.discription}}
-          		 
-          	</span>
-          	<span  class="col-md-1">
-          		Seats: {{bus.seats}}
-          		 
-          	</span>
-          	<span class="col-md-1">
-          	windows:{{bus.window}}
-          	
-          	</span>
-          	<span class="col-md-1">
-          	inr:{{bus.inr}}	
+    	<div>
+          
 
-          	</span>
-          	<span class="col-md-3">
-          		Mobile :{{bus.mobileNumber}}
-          	</span>	
+          <div >
+            <div style="color:black ;float:left">  
+                  <!-- <span>{{allbusInfo[0].source}}</span> -->
+              login:{{user1}}
+              </div><br><br>
+              <div style="color:green ;float:left">  
+                  <span><h4>{{allbusInfo[0].source}}<h4></span>
+              </div>
+              <div style="color:black ;width:85%; float:left">
+                <marquee direction="right"><br><img src="bus1.png" heigth ='60' width='60' ></marquee>
+              </div>
+              <div style="color:green ">
+                    <span><h4>{{allbusInfo[0].destination}}<h4></span>  
+              </div>
+              <div style="width:100%;height:0.5%;background-color:black;color:black">
+              </div> 
+          </div>      
 
-            <span class="col-md-3">reserv your seats
-            <input type="submit21" ng-click ="seats()" value="view seats">
-            </span> 
+             
+           
+          
+          
+
+
+
+          <div>
+             
+              <ul ng-repeat = "bus in allbusInfo  " >
+             	      <span class="col-md-2 col-sm-2 col-xs-2 " >
+          		        <img src="2322.png" heigth ='35' width='35' ><br>{{bus.busName}}<br>{{bus.id}}
+          	        </span>
+          	         
+                     <span class="col-md-1 col-sm-1 col-xs-1 ">
+          		        Type<br>{{bus.discription}}
+                     </span>
+          	         <span  class="col-md-2 col-sm-2 col-xs-2 ">
+          		        Seats: {{bus.seats}}
+          		       </span>
+          	         <span class="col-md-1 col-sm-1 col-xs-1 ">
+                    	<h6>windows:{{bus.window}}</h6>
+          	        
+          	         </span>
+          	         <span class="col-md-1 col-sm-1 col-xs-1 ">
+          	         inr:{{bus.inr}}	
+
+          	         </span>
+          	         <span class="col-md-2 col-sm-2 col-xs-2 ">
+          		        Mobile<br>{{bus.mobileNumber}}
+          	         </span>	
+
+                      <span class="col-md-3 col-sm-3 col-xs-3 ">
+                         <!-- 
+                        <select style ="color:red ;width:4%; height:4%" id="ok" value="s"><option>12</option><option>13</option>
+                          <option>14</option><option>15</option><option>16</option>
+                          <option>17</option><option>18</option><option>19</option>
+                        </select> -->
+                     
+                      <input type="submit" style="width:60%;height:9%" ng-click ="seats(bus._id);allBusInfo(bus)" value="view seats">
+                      </span> 
             
-          	<hr><hr>
-          	
-          	
-         
-          	
-       </div>
-       
-       </ul>
-</body></html>
+                    	<hr><hr><br><br><br>
+                      <div style="width:100%;height:0.5%;background-color:black;color:black"></div>
+            	
+        
+                      <div  ng-if="canshowseat==bus._id">
+                          
+
+                          <div style="float:left;width:90%;height:35%;background-color:white;color:black">
+                            <div> 
+                             <span >
+                                  <a title="seat Number 45" ng-if = "reserved.indexOf('45')==-1" style ="color:green" ng-click="selectThisSeat(45)">45<img src="bus121.png" heigth ='35' width='35' ></a>
+
+                                  <span title="seat Number 45 alredy reserved" ng-if = "reserved.indexOf('45') !== -1" style ="color:red" >45<img src="bus121.png" heigth ='35' width='35' ></span>
+                                </span>
+                                
+                                &nbsp;
+
+                                <span >
+                                  <a title="seat Number 37" ng-if = "reserved.indexOf('37')==-1" style ="color:green" ng-click="selectThisSeat(37)">37<img src="bus121.png" heigth ='35' width='35' ></a>
+
+                                  <span title="seat Number 37 alredy reserved" ng-if = "reserved.indexOf('37') !== -1" style ="color:red" >37<img src="bus121.png" heigth ='35' width='35' ></span>
+                                </span>
+                                 
+                                 &nbsp;
+
+                                 <span >
+                                  <a title="seat Number 36" ng-if = "reserved.indexOf('36')==-1" style ="color:green" ng-click="selectThisSeat(36)">36<img src="bus121.png" heigth ='35' width='35' ></a>
+
+                                  <span title="seat Number36 alredy reserved" ng-if = "reserved.indexOf('36') !== -1" style ="color:red" >R<img src="bus121.png" heigth ='35' width='35' ></span>
+                                </span>
+                               
+                               &nbsp;
+
+                               <span >
+                                  <a title="seat Number 29" ng-if = "reserved.indexOf('29')==-1" style ="color:green" ng-click="selectThisSeat(29)">29<img src="bus121.png" heigth ='35' width='35' ></a>
+                                  <span title="seat Number 29 alredy reserved" ng-if = "reserved.indexOf('29') !== -1" style ="color:red" >R<img src="bus121.png" heigth ='35' width='35' ></span>
+                                </span>
+                                
+                                &nbsp;
+
+                                <span >
+                                  <a title="seat Number 28" ng-if = "reserved.indexOf('28')==-1" style ="color:green" ng-click="selectThisSeat(28)">28<img src="bus121.png" heigth ='35' width='35' ></a>
+                                  <span title="seat Number 28 alredy reserved" ng-if = "reserved.indexOf('28') !== -1" style ="color:red" >R<img src="bus121.png" heigth ='35' width='35' ></span>
+                                </span>
+                               
+                               &nbsp;
+
+                               <span >
+                                  <a title="seat Number 21" ng-if = "reserved.indexOf('21')==-1" style ="color:green" ng-click="selectThisSeat(21)">21<img src="bus121.png" heigth ='35' width='35' ></a>
+
+                                  <span title="seat Number 21 alredy reserved" ng-if = "reserved.indexOf('21') !== -1" style ="color:red" >R<img src="bus121.png" heigth ='35' width='35' ></span>
+                                </span>
+                               
+                               &nbsp;
+
+                               <span >
+                                  <a title="seat Number 20" ng-if = "reserved.indexOf('20')==-1" style ="color:green" ng-click="selectThisSeat(20)">20<img src="bus121.png" heigth ='35' width='35' ></a>
+
+                                  <span title="seat Number 20 alredy reserved" ng-if = "reserved.indexOf('20') !== -1" style ="color:red" >R<img src="bus121.png" heigth ='35' width='35' ></span>
+                                </span>
+                                
+                                &nbsp;
+
+                                <span >
+                                  <a title="seat Number 13" ng-if = "reserved.indexOf('13')==-1" style ="color:green" ng-click="selectThisSeat(13)">13<img src="bus121.png" heigth ='35' width='35' ></a>
+                                  <span title="seat Number 13 alredy reserved" ng-if = "reserved.indexOf('13') !== -1" style ="color:red" >R<img src="bus121.png" heigth ='35' width='35' ></span>
+                                </span>
+                                
+                                &nbsp;
+                                
+                                <span >
+                                  <a title="seat Number 12" ng-if = "reserved.indexOf('12')==-1" style ="color:green" ng-click="selectThisSeat(12)">12<img src="bus121.png" heigth ='35' width='35' ></a>
+                                
+                                  <span title="seat Number 12 alredy reserved" ng-if = "reserved.indexOf('12') !== -1" style ="color:red" >R<img src="bus121.png" heigth ='35' width='35' ></span>
+
+                                </span>
+ 
+                              &nbsp;
+
+                              <span >
+                                  <a title="seat Number 5" ng-if = "reserved.indexOf('5')==-1" style ="color:green" ng-click="selectThisSeat(05)">05<img src="bus121.png" heigth ='35' width='35' ></a>
+                                
+                                 <span title="seat Number 5 alredy reserved" ng-if = "reserved.indexOf('5') !== -1" style ="color:red" >R<img src="bus121.png" heigth ='35' width='35' >
+                                  </span>
+
+                                </span>
+
+                              &nbsp;
+
+                              <span >
+                                  <a title="seat Number 4" ng-if = "reserved.indexOf('4')==-1" style ="color:green" ng-click="selectThisSeat(04)">04<img src="bus121.png" heigth ='35' width='35' ></a>
+                                
+                                  <span title="seat Number 4 alredy reserved" ng-if = "reserved.indexOf('4') !== -1" style ="color:red" >R<img src="bus121.png" heigth ='35' width='35' ></span>
+                                </span>
+
+   
+                             </div>
+                             <div> 
+                             <span >
+                                  <a title="seat Number 44" ng-if = "reserved.indexOf('44')==-1" style ="color:green" ng-click="selectThisSeat(44)">44<img src="bus121.png" heigth ='35' width='35' ></a>
+
+                                  <span title="seat Number 44 alredy reserved" ng-if = "reserved.indexOf('44') !== -1" style ="color:red" >R<img src="bus121.png" heigth ='35' width='35' ></span>
+                                </span>
+                                
+                                &nbsp;
+
+                                <span >
+                                  <a title="seat Number 38" ng-if = "reserved.indexOf('38')==-1" style ="color:green" ng-click="selectThisSeat(38)">38<img src="bus121.png" heigth ='35' width='35' ></a>
+
+                                  <span title="seat Number 38 alredy reserved" ng-if = "reserved.indexOf('38') !== -1" style ="color:red" >R<img src="bus121.png" heigth ='35' width='35' ></span>
+                                </span>
+                                 
+                                 &nbsp;
+
+                                 <span >
+                                  <a title="seat Number 35" ng-if = "reserved.indexOf('35')==-1" style ="color:green" ng-click="selectThisSeat(35)">35<img src="bus121.png" heigth ='35' width='35' ></a>
+
+                                  <span title="seat Number 35 alredy reserved" ng-if = "reserved.indexOf('35') !== -1" style ="color:red" >R<img src="bus121.png" heigth ='35' width='35' ></span>
+                                </span>
+                               
+                               &nbsp;
+
+                               <span >
+                                  <a title="seat Number 30" ng-if = "reserved.indexOf('30')==-1" style ="color:green" ng-click="selectThisSeat(30)">30<img src="bus121.png" heigth ='35' width='35' ></a>
+                                  <span title="seat Number 30 alredy reserved" ng-if = "reserved.indexOf('30') !== -1" style ="color:red" >R<img src="bus121.png" heigth ='35' width='35' ></span>
+                                </span>
+                                
+                                &nbsp;
+
+                                <span >
+                                  <a title="seat Number 27" ng-if = "reserved.indexOf('27')==-1" style ="color:green" ng-click="selectThisSeat(27)">27<img src="bus121.png" heigth ='35' width='35' ></a>
+                                  <span title="seat Number 27 alredy reserved" ng-if = "reserved.indexOf('27') !== -1" style ="color:red" >R<img src="bus121.png" heigth ='35' width='35' ></span>
+                                </span>
+                               
+                               &nbsp;
+
+                               <span >
+                                  <a title="seat Number 22" ng-if = "reserved.indexOf('22')==-1" style ="color:green" ng-click="selectThisSeat(22)">22<img src="bus121.png" heigth ='35' width='35' ></a>
+
+                                  <span title="seat Number 22 alredy reserved" ng-if = "reserved.indexOf('22') !== -1" style ="color:red" >R<img src="bus121.png" heigth ='35' width='35' ></span>
+                                </span>
+                               
+                               &nbsp;
+
+                               <span >
+                                  <a title="seat Number 19" ng-if = "reserved.indexOf('19')==-1" style ="color:green" ng-click="selectThisSeat(19)">19<img src="bus121.png" heigth ='35' width='35' ></a>
+
+                                  <span title="seat Number 19 alredy reserved" ng-if = "reserved.indexOf('19') !== -1" style ="color:red" >R<img src="bus121.png" heigth ='35' width='35' ></span>
+                                </span>
+                                
+                                &nbsp;
+
+                                <span >
+                                  <a title="seat Number 14" ng-if = "reserved.indexOf('14')==-1" style ="color:green" ng-click="selectThisSeat(14)">14<img src="bus121.png" heigth ='35' width='35' ></a>
+                                  <span title="seat Number 14 alredy reserved" ng-if = "reserved.indexOf('14') !== -1" style ="color:red" >R<img src="bus121.png" heigth ='35' width='35' ></span>
+                                </span>
+                                
+                                &nbsp;
+                                
+                                <span >
+                                  <a title="seat Number 11" ng-if = "reserved.indexOf('11')==-1" style ="color:green" ng-click="selectThisSeat(11)">11<img src="bus121.png" heigth ='35' width='35' ></a>
+                                
+                                  <span title="seat Number 11 alredy reserved" ng-if = "reserved.indexOf('11') !== -1" style ="color:red" >R<img src="bus121.png" heigth ='35' width='35' ></span>
+
+                                </span>
+ 
+                              &nbsp;
+
+                              <span >
+                                  <a title="seat Number 6" ng-if = "reserved.indexOf('6')==-1" style ="color:green" ng-click="selectThisSeat(06)">06<img src="bus121.png" heigth ='35' width='35' ></a>
+                                
+                                 <span title="seat Number 6 alredy reserved" ng-if = "reserved.indexOf('6') !== -1" style ="color:red" >R<img src="bus121.png" heigth ='35' width='35' >
+                                  </span>
+
+                                </span>
+
+                              &nbsp;
+
+                              <span >
+                                  <a title="seat Number 3" ng-if = "reserved.indexOf('3')==-1" style ="color:green" ng-click="selectThisSeat(03)">03<img src="bus121.png" heigth ='35' width='35' ></a>
+                                
+                                  <span title="seat Number 3 alredy reserved" ng-if = "reserved.indexOf('3') !== -1" style ="color:red" >R<img src="bus121.png" heigth ='35' width='35' ></span>
+                                </span>
+
+                             </div>
+                            
+
+                             <div> 
+                              &nbsp; <span >
+                                  <a title="seat Number 43" ng-if = "reserved.indexOf('43')==-1" style ="color:green" ng-click="selectThisSeat(43)">43<img src="bus121.png" heigth ='35' width='35' ></a>
+
+                                  <span title="seat Number 43 alredy reserved" ng-if = "reserved.indexOf('43') !== -1" style ="color:red" >R<img src="bus121.png" heigth ='35' width='35' ></span>
+                                </span> 
+                              
+                             </div>
+                             <div> 
+                               <span >
+                                  <a title="seat Number 42" ng-if = "reserved.indexOf('42')==-1" style ="color:green" ng-click="selectThisSeat(42)">42<img src="bus121.png" heigth ='35' width='35' ></a>
+
+                                  <span title="seat Number 42 alredy reserved" ng-if = "reserved.indexOf('42') !== -1" style ="color:red" >R<img src="bus121.png" heigth ='35' width='35' ></span>
+                                </span>
+                                
+                                &nbsp;
+
+                                <span >
+                                  <a title="seat Number 39" ng-if = "reserved.indexOf('39')==-1" style ="color:green" ng-click="selectThisSeat(39)">39<img src="bus121.png" heigth ='35' width='35' ></a>
+
+                                  <span title="seat Number 39 alredy reserved" ng-if = "reserved.indexOf('39') !== -1" style ="color:red" >R<img src="bus121.png" heigth ='35' width='35' ></span>
+                                </span>
+                                 
+                                 &nbsp;
+
+                                 <span >
+                                  <a title="seat Number 34" ng-if = "reserved.indexOf('34')==-1" style ="color:green" ng-click="selectThisSeat(34)">34<img src="bus121.png" heigth ='35' width='35' ></a>
+
+                                  <span title="seat Number 34 alredy reserved" ng-if = "reserved.indexOf('34') !== -1" style ="color:red" >R<img src="bus121.png" heigth ='35' width='35' ></span>
+                                </span>
+                               
+                               &nbsp;
+
+                               <span >
+                                  <a title="seat Number 31" ng-if = "reserved.indexOf('31')==-1" style ="color:green" ng-click="selectThisSeat(31)">31<img src="bus121.png" heigth ='35' width='35' ></a>
+                                  <span title="seat Number 31 alredy reserved" ng-if = "reserved.indexOf('31') !== -1" style ="color:red" >R<img src="bus121.png" heigth ='35' width='35' ></span>
+                                </span>
+                                
+                                &nbsp;
+
+                                <span >
+                                  <a title="seat Number 26" ng-if = "reserved.indexOf('26')==-1" style ="color:green" ng-click="selectThisSeat(26)">26<img src="bus121.png" heigth ='35' width='35' ></a>
+                                  <span title="seat Number 26 alredy reserved" ng-if = "reserved.indexOf('26') !== -1" style ="color:red" >R<img src="bus121.png" heigth ='35' width='35' ></span>
+                                </span>
+                               
+                               &nbsp;
+
+                               <span >
+                                  <a title="seat Number 23" ng-if = "reserved.indexOf('23')==-1" style ="color:green" ng-click="selectThisSeat(23)">23<img src="bus121.png" heigth ='35' width='35' ></a>
+
+                                  <span title="seat Number 23 alredy reserved" ng-if = "reserved.indexOf('23') !== -1" style ="color:red" >R<img src="bus121.png" heigth ='35' width='35' ></span>
+                                </span>
+                               
+                               &nbsp;
+
+                               <span >
+                                  <a title="seat Number 18" ng-if = "reserved.indexOf('18')==-1" style ="color:green" ng-click="selectThisSeat(18)">18<img src="bus121.png" heigth ='35' width='35' ></a>
+
+                                  <span title="seat Number 18 alredy reserved" ng-if = "reserved.indexOf('18') !== -1" style ="color:red" >R<img src="bus121.png" heigth ='35' width='35' ></span>
+                                </span>
+                                
+                                &nbsp;
+
+                                <span >
+                                  <a title="seat Number 15" ng-if = "reserved.indexOf('15')==-1" style ="color:green" ng-click="selectThisSeat(15)">15<img src="bus121.png" heigth ='35' width='35' ></a>
+                                  <span title="seat Number 15 alredy reserved" ng-if = "reserved.indexOf('15') !== -1" style ="color:red" >R<img src="bus121.png" heigth ='35' width='35' ></span>
+                                </span>
+                                
+                                &nbsp;
+                                
+                                <span >
+                                  <a title="seat Number 10" ng-if = "reserved.indexOf('10')==-1" style ="color:green" ng-click="selectThisSeat(10)">10<img src="bus121.png" heigth ='35' width='35' ></a>
+                                
+                                  <span title="seat Number 10 alredy reserved" ng-if = "reserved.indexOf('10') !== -1" style ="color:red" >R<img src="bus121.png" heigth ='35' width='35' ></span>
+
+                                </span>
+ 
+                              &nbsp;
+
+                              <span >
+                                  <a title="seat Number 7" ng-if = "reserved.indexOf('7')==-1" style ="color:green" ng-click="selectThisSeat(07)">07<img src="bus121.png" heigth ='35' width='35' ></a>
+                                
+                                 <span title="seat Number 7 alredy reserved" ng-if = "reserved.indexOf('7') !== -1" style ="color:red" >R<img src="bus121.png" heigth ='35' width='35' >
+                                  </span>
+
+                                </span>
+
+                              &nbsp;
+
+                              <span >
+                                  <a title="seat Number 2" ng-if = "reserved.indexOf('2')==-1" style ="color:green" ng-click="selectThisSeat(02)">02<img src="bus121.png" heigth ='35' width='35' ></a>
+                                
+                                  <span title="seat Number 2 alredy reserved" ng-if = "reserved.indexOf('2') !== -1" style ="color:red" >R<img src="bus121.png" heigth ='35' width='35' ></span>
+                                </span>
+
+ 
+                             </div>
+                             <div> 
+                               <span >
+                                  <a title="seat Number 41" ng-if = "reserved.indexOf('41')==-1" style ="color:green" ng-click="selectThisSeat(41)">41<img src="bus121.png" heigth ='35' width='35' ></a>
+
+                                  <span title="seat Number 41 alredy reserved" ng-if = "reserved.indexOf('41') !== -1" style ="color:red" >R<img src="bus121.png" heigth ='35' width='35' ></span>
+                                </span>
+                                
+                                &nbsp;
+
+                                <span >
+                                  <a title="seat Number 40" ng-if = "reserved.indexOf('40')==-1" style ="color:green" ng-click="selectThisSeat(40)">40<img src="bus121.png" heigth ='35' width='35' ></a>
+
+                                  <span title="seat Number 40 alredy reserved" ng-if = "reserved.indexOf('40') !== -1" style ="color:red" >R<img src="bus121.png" heigth ='35' width='35' ></span>
+                                </span>
+                                 
+                                 &nbsp;
+
+                                 <span >
+                                  <a title="seat Number 33" ng-if = "reserved.indexOf('33')==-1" style ="color:green" ng-click="selectThisSeat(33)">33<img src="bus121.png" heigth ='35' width='35' ></a>
+
+                                  <span title="seat Number 33 alredy reserved" ng-if = "reserved.indexOf('33') !== -1" style ="color:red" >R<img src="bus121.png" heigth ='35' width='35' ></span>
+                                </span>
+                               
+                               &nbsp;
+
+                               <span >
+                                  <a title="seat Number 32" ng-if = "reserved.indexOf('32')==-1" style ="color:green" ng-click="selectThisSeat(32)">32<img src="bus121.png" heigth ='35' width='35' ></a>
+                                  <span title="seat Number 32 alredy reserved" ng-if = "reserved.indexOf('32') !== -1" style ="color:red" >R<img src="bus121.png" heigth ='35' width='35' ></span>
+                                </span>
+                                
+                                &nbsp;
+
+                                <span >
+                                  <a title="seat Number 25" ng-if = "reserved.indexOf('25')==-1" style ="color:green" ng-click="selectThisSeat(25)">25<img src="bus121.png" heigth ='35' width='35' ></a>
+                                  <span title="seat Number 25 alredy reserved" ng-if = "reserved.indexOf('25') !== -1" style ="color:red" >R<img src="bus121.png" heigth ='35' width='35' ></span>
+                                </span>
+                               
+                               &nbsp;
+
+                               <span >
+                                  <a title="seat Number 24" ng-if = "reserved.indexOf('24')==-1" style ="color:green" ng-click="selectThisSeat(24)">24<img src="bus121.png" heigth ='35' width='35' ></a>
+
+                                  <span title="seat Number 24 alredy reserved" ng-if = "reserved.indexOf('24') !== -1" style ="color:red" >R<img src="bus121.png" heigth ='35' width='35' ></span>
+                                </span>
+                               
+                               &nbsp;
+
+                               <span >
+                                  <a title="seat Number 17" ng-if = "reserved.indexOf('17')==-1" style ="color:green" ng-click="selectThisSeat(17)">17<img src="bus121.png" heigth ='35' width='35' ></a>
+
+                                  <span title="seat Number 17 alredy reserved" ng-if = "reserved.indexOf('17') !== -1" style ="color:red" >R<img src="bus121.png" heigth ='35' width='35' ></span>
+                                </span>
+                                
+                                &nbsp;
+
+                                <span >
+                                  <a title="seat Number 16" ng-if = "reserved.indexOf('16')==-1" style ="color:green" ng-click="selectThisSeat(16)">16<img src="bus121.png" heigth ='35' width='35' ></a>
+                                  <span title="seat Number 1 alredy reserved" ng-if = "reserved.indexOf('16') !== -1" style ="color:red" >R<img src="bus121.png" heigth ='35' width='35' ></span>
+                                </span>
+                                
+                                &nbsp;
+                                
+                                <span >
+                                  <a title="seat Number 9" ng-if = "reserved.indexOf('9')==-1" style ="color:green" ng-click="selectThisSeat(9)">09<img src="bus121.png" heigth ='35' width='35' ></a>
+                                
+                                  <span title="seat Number 9 alredy reserved" ng-if = "reserved.indexOf('9') !== -1" style ="color:red" >R<img src="bus121.png" heigth ='35' width='35' ></span>
+
+                                </span>
+ 
+                              &nbsp;
+
+                              <span >
+                                  <a title="seat Number 8" ng-if = "reserved.indexOf('8')==-1" style ="color:green" ng-click="selectThisSeat(8)">08<img src="bus121.png" heigth ='35' width='35' ></a>
+                                
+                                 <span title="seat Number 8 alredy reserved" ng-if = "reserved.indexOf('8') !== -1" style ="color:red" >R<img src="bus121.png" heigth ='35' width='35' >
+                                  </span>
+
+                                </span>
+
+                              &nbsp;
+
+                              <span >
+                                  <a title="seat Number 1" ng-if = "reserved.indexOf('1')==-1" style ="color:green" ng-click="selectThisSeat(01)">01<img src="bus121.png" heigth ='35' width='35' ></a>
+                                
+                                  <span title="seat Number 1 alredy reserved" ng-if = "reserved.indexOf('1') !== -1" style ="color:red" >R<img src="bus121.png" heigth ='35' width='35' ></span>
+                                </span>
+
+
+
+
+                              &nbsp;<span> <img src="bus122.png" heigth ='35' width='35' ></span>            
+                             </div>
+                             </div>
+                             <div style="height:35%;background-color:pink;color:black"  >
+                               <span ng-if = "list[0]">
+                               Bus No={{bus.id}}<br> Selected seats=
+                               <!--  <span ng-repeat = "lis in list">{{lis}},</span>
+                                <input type="submit" style="width:10%;height:25%"value="proceed" ng-click="proceed()">
+
+ -->
+
+<div class= "text-center">
+ 
+
+ 
+<a href="#BootstrapModal1111" role="button" class="btn btn-large btn-primary" data-toggle="modal">Open</a>
+ 
+</div>
+ 
+ 
+ 
+ 
+<!-- Modal HTML -->
+ 
+ 
+<div id="BootstrapModal1111" class="modal fade">
+ 
+ 
+<div class="modal-dialog">
+ 
+ 
+<div class="modal-content">
+ 
+ 
+<div class="modal-header">
+ 
+<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+ 
+ 
+<h4 class="modal-title">This is a sample Modal</h4>
+ 
+ 
+</div>
+ 
+ 
+ 
+<div class="modal-body">
+ 
+ 
+ 
+Do you understand how this Modal works? If not see, the code.
+ 
+ 
+ 
+ 
+<small>Keep practicing, you will learn how to create this</small>
+ 
+ 
+</div>
+ 
+ 
+ 
+<div class="modal-footer">
+ 
+<button type="button" class="btn btn-success" data-dismiss="modal">Okay, I Understand</button>
+ 
+<button type="button" class="btn btn-warning">Take me to code</button>
+ 
+</div>
+ 
+ 
+</div>
+ 
+ 
+</div>
+ 
+ 
+</div>
+ 
+
+
+                                
+                    </span>
+
+                            
+                      </div>
+                       <div style="width:100%;height:0.5%;background-color:black;color:black"></div>
+                        </div>
+              </ul>    
+           </div> 
+            
+      </div>  
+    </body>     
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+
+
+          <div id="Ticket_information" class="modal fade" role="dialog" style="width:50% heigth:60%">
+                         <div>
+                <br>
+                    <h5 style="color:red">&nbsp;{{error}}</h5>
+                    <label for="source">From</label> 
+                    <input type="text" ng-model="bus.source" placeholder="Source">
+                <br>
+                    <label for="des">To </label>
+                    <input type="text"  ng-model="bus.destination" placeholder="Destination">
+                <br>
+                    <label for="start-time">ONWARD DATE:</label>
+                        <input type="datetime-local" ng-model="bus.stime" >
+                <br>
+                    <label for="end-time">RETURN DATE:</label>
+                        <input type="datetime-local" ng-model="bus.etime"><br>
+                  
+                    <input type="submit" ng-disabled  = " !bus.source || !bus.destination || !bus.stime" value="Search" ng-click="searchBus()" class="btn btn-primary">
+                  {{data}}{{data1}}
+                </div>
+
+value="view Ticket" data-toggle="modal" data-target="#Ticket_information">
+                              
+
+        </div>
+ -->

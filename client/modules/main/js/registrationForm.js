@@ -7,10 +7,10 @@ angular.module('registrationCtrl',[])
     .controller('registrationCtrl',function ($scope,$http,$state) {
         $scope.user ={};
         $scope.createUser=function(){
-            console.log("sdfhg"+$scope.user.aadharNumber.length);
-            console.log("sdfhg"+$scope.user.mobileNumber.length);
-            console.log("sdfhg"+$scope.user.name.length);
-            console.log("sdfhg"+$scope.user.password.length);
+           //console.log("sdfhg"+$scope.user.aadharNumber.length);
+            //console.log("sdfhg"+$scope.user.mobileNumber.length);
+            //console.log("sdfhg"+$scope.user.name.length);
+            //console.log("sdfhg"+$scope.user.password.length);
         
            var found=0;
             for (var i = 0; i < $scope.user.email.length; i++) {
@@ -25,20 +25,27 @@ angular.module('registrationCtrl',[])
   //console.log("asdfdf",   JSON.stringify(response.data));
 
   
-        if(response.data.ok){
+        if(response){
          // $scope.record=JSON.stringify(response.data);
            //  $state.go('app.search');
         $scope.error="welcome "+$scope.user.name+"  your registration is succesfull "
 
-        }else{
+        }if(response.data.error){
             //$scope.error = response.data.error;
-        console.log("not welcome");
+        $scope.error="the userName "+$scope.user.name+"  is exist,you can not register with same userName "
         }
          // $state.go('app.search',JSON.stringify(response));
    })
             }  if(found!=1){$scope.error="invalid email"}if($scope.user.password.length<=8){$scope.error="invalid password"}
             if($scope.user.name.length<=4){$scope.error="username is greter than 4 character"}if($scope.user.password!=$scope.user.conformPassword){$scope.error="password combination not match"}
-}})
+}
+$scope.createUserBack=function(){
+ $state.go('app.home');
+ //$state.go('app.main');
+}
+
+
+})
            /* $http.post('/auth/createUser', $scope.user).then(function (response){
                                 console.log(response);
                                 

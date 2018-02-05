@@ -1,5 +1,7 @@
 
 
+
+
 /**
  * Created by Pravin on 12/04/17.
  */
@@ -19,8 +21,9 @@ router.route('/auth/createBus').post(auth.createBus);
 router.route('/auth/update').post(auth.update);
 router.route('/auth/delete1').post(auth.delete1);
  router.route('/auth/searchBus').post(auth.searchBus);
-
-
+router.route('/auth/searchBusRecord').post(auth.searchBusRecord);
+router.route('/auth/proceed').post(auth.proceed);
+router.route('/auth/getBusinfo').post(auth.getBusinfo);
 
   console.log('welcome routes registered..!');
 };

@@ -10,7 +10,7 @@
 	<!--
 	<link rel="stylesheet" href="../lib/bootstrap/dist/css/home.css" rel="stylesheet"/>
 	<link rel="stylesheet" href="css/mainCss.css" rel="stylesheet"/>-->
-	<link rel="stylesheet" href="../css/home.css"/>
+	 <link rel="stylesheet" href="../css/home.css"/> 
 	
 	<link rel="stylesheet" href="../lib/bootstrap/dist/css/bootstrap.css"/>
 	<script src="../lib/jquery/dist/jquery.min.js"></script>
@@ -23,10 +23,13 @@
 
 	<script src="../modules/main/index.js"></script>
 	<script src="../modules/main/js/searchCtr.js"></script>
+		<script src="../modules/main/js/adminBusCtr.js"></script>
 	<script src="../modules/main/js/mainController.js"></script>
 	<script src="../modules/main/js/registrationForm.js"></script>
 	<script src="../modules/main/js/busCtr.js"></script>
-		<script src="../modules/main/js/adminBusCtr.js"></script>
+	<script src="../modules/main/js/payctr.js"></script>
+	<script src="../modules/main/js/paidctr.js"></script>
+	
 		<script src="../modules/main/js/seatsPhoto.js"></script>
 	
 	<script src="../modules/profile/index.js"></script>
@@ -37,23 +40,54 @@
 </head>
 <body class="container" >
 <nav class="navbar navbar-default row">
-	<div class="container-fluid">
-		<div class="navbar-header">
-			<ul class="nav navbar-nav ">
-				<li class="col-xs-3"><a ui-sref="app.home">Home</a></li>
-				<li class="col-xs-3"><a ui-sref="app.adminBus">Profile</a></li>
-				<li class="col-xs-3"><a ui-sref="app.bus">about</a></li>
-								<li class="col-xs-3"><a ui-sref="app.adminBus">admin</a></li>
-				<li class="col-xs-3"><a ui-sref="app.contact">Contact</a></li>
-			</ul>
-		</div>
+	<div style="float:left;width:50%;height:20%;background-color:black;color:black" class="				container-fluid">
+		
+				<div ><!-- class="navbar-header" -->
+				<!-- <ul class="nav navbar-nav "> -->
+						<span class="col-xs-4"><li style="color:white"><a ui-sref="app.home"><h4>Home</h4></a></li></span	><!-- name of the state -->
+						<span class="col-xs-4"><li><a ui-sref="app.adminBus"><h4>Profile</h4></a></li></span>
+						<span class="col-xs-4"><li ><a ui-sref="app.bus"><h4>About</h4></a></li></span>
+					
+				<!-- </ul> -->
+				</div>
+
+	
+	</div>
+	<div style="width:100%;height:20%;background-color:black;color:black">
+			<li class="col-xs-3"><a ui-sref="app.seatsPhoto"><h4>Contact</h4></a></li>
+			<li class="col-xs-3"><a ui-sref="app.adminBus"><h4>Admin</h4></a></li>
 	</div>
 </nav>
 
-<div class="row">
-	<div>
-		<div class="well" ui-view></div>
-	</div>
-</div>
-</body>
+<marquee>WELCOME TO THE OUR SITE</marquee>	
+
+
+<div style="align:left;float:left;width:15%;heigth:80%;background-color:red;color:black;" class="			  container-fluid">
+		  <div class="navbar-header">
+					<ul class="nav navbar-nav ">
+							<li><a ui-sref="app.home"><h4>Login</h4></a></li><br><!-- name of the state -->
+						<li><a ui-sref="app.adminBus"><h4>Sign up</h4></a></li><br>
+						<li><a ui-sref="app.bus"><h4></h4>Logout</a></li><br>
+						<li><a ui-sref="app.seatsPhoto"><h4>Help</h4></a></li><br>
+						<li><a ui-sref="app.pay"><h4>Pay</h4></a></li><br>
+						<li><a ui-sref="app.paid"><h4>Paid</h4></a></li><br>
+						<li><a ui-sref="app.adminBus"><h4>FAQ</h4></a></li><br>
+					</ul>
+		  </div>
+ </div>
+ 
+
+			
+ <div style="align:right;float:right;width:80%;heigth:50%;background-color:black;color:black;">
+		   <div class="row">
+  				   	  <div class="well" ui-view>
+				      </div>
+			</div>
+ </div>	
+ 
+ </body>
 </html>
+
+  
+
+

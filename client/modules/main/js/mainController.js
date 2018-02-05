@@ -3,7 +3,7 @@
  * Created by medibox on 30/7/17.
  */
 angular.module('appMainCtrl',[])
-    .controller('HelloWordCtrl',function ($scope,$http,$state) {
+    .controller('HelloWordCtrl',function ($scope,$http,$state,$rootScope) {
         
 
 $scope.user={};
@@ -13,8 +13,8 @@ $scope.search=function(){
 
   
         if(response.data.ok){
-          $scope.loginuser="welcom "+$scope.user.name+"  your registration is succesfull "
-
+          $rootScope.loginuser=$scope.user.name;
+console.log("fgf",$scope.user);
           $scope.record=JSON.stringify(response.data);
              $state.go('app.search');
         }else{
@@ -23,7 +23,6 @@ $scope.search=function(){
          // $state.go('app.search',JSON.stringify(response));
    })
 }
-
 
 $scope.gotosignup =function(){
    $state.go('app.registration');

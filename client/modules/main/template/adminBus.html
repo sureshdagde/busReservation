@@ -1,31 +1,59 @@
 
 
 
+
  <!DOCTYPE html>
 <html>
 <body>
 
 <h3> BUS RECORD</h3>
 
-<div>
-   
-    <label for="_id">id</label>
-    <input ng-model="bus._id" type="text"  placeholder="ID..">
+    <div>
+            <input type="submit" ng-click="insert()" value="INSERT">
+            <input type="submit" ng-click="edit()" value="EDIT">
+    </div>
 
-    <label for="bname">bus name</label>
+
+    <div ng-if="showEdit">
+       <input ng-model="bus.id" type="text"  placeholder="search bus inserting correct but ID NUMBER" ng-change="searchBusRecord()">
+    </div>
+
+<div ng-if="showInsert">
+   
+   
+
+
+    <label for="_id">id</label>
+    <input ng-model="bus.id" type="text"  placeholder="ID..">
+
+    <label for="name">bus name</label>
     <input ng-model="bus.name" type="text"  placeholder="BUS NAME..">
 
     <label for="source"> source</label>
-    <input ng-model="bus.source" type="text"  placeholder="source..">
+    <input ng-model="bus.source" type="text"  ng-change="bus.destination=bus.destination.toLowerCase();" placeholder="source..">
 
     <label for="destination">destination</label>
-    <input ng-model="bus.destination" type="text"  placeholder="destination..">
+    <input ng-model="bus.destination" type="text"  ng-change="bus.destination=bus.destination.toLowerCase();" placeholder="destination..">
+
+    <label for="Via">Via</label>
+    <input ng-model="bus.via" type="text"  ng-change="bus.destination=bus.destination.toLowerCase();"  placeholder="via..">
 
     <label for="discription">discription</label>
     <input ng-model="bus.discription" type="text"   placeholder="discription.">
+    <label for="discription">No of bordingPoint </label>
+     <input style ="color:red ;width:4%; height:4%" ng-model="bus.noOf"  type="text" placeholder="bordingPoint .">
+<div>
+<label for="bordingPoint">bordingPoint </label> 
+    <input ng-model="bus.bordingPoint"  type="text" placeholder="bordingPoint .">
+<div>
+    <div>
+<label for="droppingPoint">droppingPoint </label> 
+    <input ng-model="bus.droppingPoint"  type="text" placeholder="droppingPoint .">
+</div>
 
 <label for="bordingTime">bordingTime </label> 
     <input ng-model="bus.bordingTime"  type="datetime-local" placeholder="bordingTime .">
+
 <br>
 <label for="droppingTime"> droppingTime</label>
     <input type="datetime-local" ng-model="bus.droppingTime" placeholder="droppingTime.">
@@ -36,20 +64,22 @@
 <label for="window">window</label>
     <input type="NUMBER" ng-model="bus.window" placeholder="window.">
 
-  <label for="inr">inr</label>
+  <label for="inr">amount</label>
     <input type="NUMBER" ng-model="bus.inr" placeholder="inr.">
 
 <label for="email">email</label>
-    <input type="text" ng-model="bus.contact" placeholder="email.">
+    <input type="text" ng-model="bus.email" placeholder="email.">
    
 <label for="mobileNumber">mobileNumber</label>
     <input type="NUMBER" ng-model="bus.mobileNumber" placeholder="mobileNumber.">
    {{error}}
-
-    <input type="submit" ng-click="createBus()" value="newBus">
+</div>
+<div>
+    {{message}}
+    <input ng-disabled = "!bus.name || !bus.source || !bus.id || !bus.destination || !bus.via || !bus.discription || !bus.bordingTime || !bus.droppingTime || !bus.seats || !bus.window ||!bus.inr || !bus.email || !bus.mobileNumber"  class="btn btn-primary" type="submit" ng-click="createBus()" value="newBus">
     <input type="submit" ng-click="update()" value="update">
     <input type="submit" ng-click="delete1()" value="delete"><br>
-  </div>
+ </div>
 
 </body>
 </html>

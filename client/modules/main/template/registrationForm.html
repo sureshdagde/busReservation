@@ -27,7 +27,9 @@
     <input type="NUMBER" ng-model="user.mobileNumber" placeholder="MOBILE.">
 
   
-    <input type="submit" ng-click="createUser()" value="Submit"><br>{{error}}{{text}}
+    <input ng-disabled = "!user.name || !user.password || !user.conformPassword || !user.aadharNumber || !user.email || !user.mobileNumber" type="submit" class="btn btn-primary" ng-click="createUser()" value="Submit">
+    <input type="submit" ng-click="createUserBack()" value="Back">
+    <br><h6 style="color:red">{{error}}</h6>{{text}}
   </div>
 
 </body>

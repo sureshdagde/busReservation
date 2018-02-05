@@ -3,7 +3,7 @@
  * Created by medibox on 30/7/17.
  */
 
-angular.module('appMain',['appMainCtrl','registrationCtrl','searchCtr','busCtr','adminBusCtr','seatsPhoto'])
+angular.module('appMain',['appMainCtrl','registrationCtrl','searchCtr','busCtr','adminBusCtr','seatsPhoto','payctr','paidctr'])
 
 .config(function($stateProvider) {
     $stateProvider
@@ -39,5 +39,15 @@ angular.module('appMain',['appMainCtrl','registrationCtrl','searchCtr','busCtr',
             url: "/seatsPhoto",
             templateUrl: "modules/main/template/seatsPhoto.html",
             controller: "seatsPhoto"
+        })
+         .state('app.pay', {
+            url: "/pay",
+            templateUrl: "modules/main/template/pay.html",
+            controller: "payctr"
+        })
+         .state('app.paid', {
+            url: "/paid",
+            templateUrl: "modules/main/template/paid.html",
+            controller: "paidctr"
         })
 });

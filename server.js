@@ -1,10 +1,11 @@
+
 var express = require('express'),//import the property of express server
     app = express(),//accees express property by app 
     config = require('./server_side/config/development'),//in development.json there are schema (structure) of server
     routes = require('./route'),
     router = express.Router();
 
-    bodyParser = require('body-parser'),//biabary conversion
+    bodyParser = require('body-parser'),//bianary conversion
     mongoose = require('mongoose'),//mongodb connectivity like odbc14 in glashfish server(oracle)
     path = require('path');//routting
     

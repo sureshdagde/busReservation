@@ -1,17 +1,19 @@
 
+
 <!DOCTYPE html>
 <html>
 <body>
-
+Login:{{user1}}
 <h3>Type Your Route</h3>
 
 <div>
-
-    <label for="source">From</label>
-    <input type="text" ng-model="bus.source" placeholder="Source">
 <br>
-    <label for="des">To </label>
-    <input type="text"  ng-model="bus.destination" placeholder="Destination">
+    <h5 style="color:red">&nbsp;{{error}}</h5>
+    <label for="source">From</label> 
+    <input type="text" ng-model="bus.source" ng-change="bus.source=bus.source.toLowerCase();" placeholder="Source">
+<br>
+    <label for="destination">To </label>
+    <input type="text"  ng-model="bus.destination" ng-change="bus.destination=bus.destination.toLowerCase();" placeholder="Destination">
 <br>
     <label for="start-time">ONWARD DATE:</label>
         <input type="datetime-local" ng-model="bus.stime" >
@@ -19,9 +21,77 @@
     <label for="end-time">RETURN DATE:</label>
         <input type="datetime-local" ng-model="bus.etime"><br>
   
-    <input type="submit" value="Search" ng-click="searchBus()">
+    <input type="submit" ng-disabled  = " !bus.source || !bus.destination || !bus.stime" value="Search" ng-click="searchBus()" class="btn btn-primary">
   {{data}}{{data1}}
 </div>
 
+<div class= "text-center">
+ 
+
+ 
+<a href="#BootstrapModal1" role="button" class="btn btn-large btn-primary" data-toggle="modal2">Open</a>
+ 
+</div>
+ 
+ 
+ 
+ 
+<!-- Modal HTML -->
+ 
+ 
+<div id="BootstrapModal1" class="modal2 fade">
+ 
+ 
+<div class="modal2-dialog">
+ 
+ 
+<div class="modal2-content">
+ 
+ 
+<div class="modal2-header">
+ 
+<button type="button" class="close" data-dismiss="modal2" aria-hidden="true">&times;</button>
+ 
+ 
+<h4 class="modal2-title">This is a sample Modal</h4>
+ 
+ 
+</div>
+ 
+ 
+ 
+<div class="modal2-body">
+ 
+ 
+ 
+Do you understand how this Modal works? If not see, the code.
+ 
+ 
+ 
+ 
+<small>Keep practicing, you will learn how to create this</small>
+ 
+ 
+</div>
+ 
+ 
+ 
+<div class="modal2-footer">
+ 
+<button type="button" class="btn btn-success" data-dismiss="modal2">Okay, I Understand</button>
+ 
+<button type="button" class="btn btn-warning">Take me to code</button>
+ 
+</div>
+ 
+ 
+</div>
+ 
+ 
+</div>
+ 
+ 
+</div>
+ 
 </body>
 </html>
